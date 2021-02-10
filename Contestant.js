@@ -1,4 +1,4 @@
-class Contestatnt{
+class Contestant{
 constructor(){
     this.index=null;
     this.name=null;

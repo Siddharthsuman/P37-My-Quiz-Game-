@@ -10,7 +10,8 @@ constructor()
     this.option2 =  createElement('h2');
     this.option3 =  createElement('h2');
     this.option4 =  createElement('h2');
-   
+   this.reset=createButton('Reset');
+   this.info=createElement('h2');
 }
 
 
@@ -41,6 +42,10 @@ display(){
      this.option4.html("4 : Steve Rogers,Red Skull")
      this.option4.position(100,240);
  
+     this.info.html("Press reset when  you get result")
+     this.info.position(380,290);
+
+     this.reset.position(380,350);
 
      this.input.position(150,300);
      this.input2.position(150,340);
@@ -51,15 +56,24 @@ display(){
     this.input.hide();
     this.input2.hide();
     this.button.hide();
+    this.option1.hide();
+    this.option2.hide();
+    this.option3.hide();
+    this.option4.hide();
+    this.question.hide();
     contestant.name=this.input.value();
     contestant.answer=this.input2.value();
-    contestantCount+1;
+    contestantCount+=1;
+    
     contestant.index=contestantCount;
     contestant.update();
     contestant.updateCount(contestantCount);
 })
 
-
+this.reset.mousePressed(()=>{
+  contestant.updateCount(0);
+    quiz.update(0);
+})
 
 }
 }
